@@ -1,11 +1,29 @@
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Text from gatsby-config.js`,
+    description: `This description is from gatsby-config.js`,
+    author: `Kuba Modzelik`,
   },
   plugins: [
+
+    // seo - head tag
     `gatsby-plugin-react-helmet`,
+    
+    // styling
+    `gatsby-plugin-styled-components`,
+
+    // sass
+    {
+      resolve: `gatsby-plugin-sass`,
+      // options: {
+      //   cssLoaderOptions: {
+      //     camelCase: false,
+      //   },
+      // },
+    },
+
+    // Link component for router
     `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,9 +32,17 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
+
+    // images
+    `gatsby-plugin-image`,
+    
+    // images - lazy loading
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+
+    // markdowns
+    `gatsby-transformer-remark`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,12 +52,12 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
     `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    
+    `gatsby-plugin-offline`,
   ],
 }

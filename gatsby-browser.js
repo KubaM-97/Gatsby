@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+// Global styles
+import './src/assets/css/global-style.css'
+// or require('./src/assets/css/global-style.css')
 
-// You can delete this file if you're not using it
+// sass
+import './src/assets/scss/index.scss'
+// or require('./src/assets/scss/index.scss')

@@ -7,10 +7,14 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+// Helmet is like head() in Nuxt.js
+import { Helmet } from "react-helmet"
+
 function Seo({ description, lang, meta, title }) {
+
+  // this shit below is from gatsby-config.js file
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -24,17 +28,14 @@ function Seo({ description, lang, meta, title }) {
       }
     `
   )
+  
+  const defaultTitle = site.siteMetadata.title | description
+  const metaDescription = site.siteMetadata.description
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
-
+  // %s = 'Home' ( pages/index.html as a prop:  <Seo title="Home" /> )
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+    <Helmet htmlAttributes={{ lang }} title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : 'Default title'}
       meta={[
         {
           name: `description`,

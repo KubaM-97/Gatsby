@@ -1,28 +1,28 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
+// Layout contains header
 import Layout from "../components/layout"
+
+// Seo returns only Helmet - head() in Nuxt.js
 import Seo from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
+
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+
+    <h1>Hello World - static sentence</h1>
+
+    <h2>This is routing in 'pages' folder: </h2>
+    <p style={{backgroundColor: `orange`, padding: '10px'}}>
+      <Link to="/blogs/">Go to Blogs</Link> <br />
+      <Link to="/using-typescript/">Go to TypeScript</Link> <br />
+      <Link to="/stylingPage/">Styling page</Link> <br />
+      <Link to="/imagePage/">Image page</Link> <br />
+      <Link to="/propsPage/">Props page</Link> <br />
     </p>
+
   </Layout>
 )
 

@@ -29,7 +29,7 @@ function Seo({ description, lang, meta, title }) {
     `
   )
   
-  const defaultTitle = site.siteMetadata.title | description
+  const defaultTitle = site.siteMetadata.title | title
   const metaDescription = site.siteMetadata.description
 
   // %s = 'Home' ( pages/index.html as a prop:  <Seo title="Home" /> )

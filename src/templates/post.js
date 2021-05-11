@@ -3,37 +3,24 @@ import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 
 export default function Template({data}) {
-    const { allMarkdownRemark: post } = data;
-    // or const post = data.markdownRemark;
-
-    console.log(post.nodes[0].frontmatter.title)
-    
+    const { markdownRemark: { frontmatter, html } }  = data;
     return (
         <Layout>
             <div>
-                <h1> {post.nodes.frontmatter.title} </h1>
-                <div dangerouslySetInnerHTML={{ __html: post.nodes.html }}/>
-                {/* <h2>title</h2>
-                <h3>stack</h3>
-                <div>
-                    <Img fluid={}/>
-                </div>
-                <div dangerouslySetInnerHTML={}/> */}
+                <h2> { frontmatter.title } </h2>
+                <div dangerouslySetInnerHTML={{ __html: html }}/>
             </div>
         </Layout>
     )
 }
-export const query = graphql`
-    query slug {
-        allMarkdownRemark {
-            nodes{
-                frontmatter{
-                    title
-                    date
-                    author
-                }
-            id
-            }
-        }
+
+export const pageQuery = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }){
+      html
+      frontmatter{
+        title
+      }
     }
+  }
 `

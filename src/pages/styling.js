@@ -11,7 +11,6 @@ import Seo from "../components/seo"
 import * as modules from '../assets/css/modules/my-own-module.module.css'
 
 // sass
-// import * as scss from '../assets/scss/index.scss'
 import '../assets/scss/index.scss'
 
 // styled-components
@@ -27,7 +26,6 @@ const GatsbyLink = styled(Link)`
   padding: 10px;
 `
 
-// console.log(scss)
 // instead of class use className={''} or style={{}}
 const StylingPage = () => (
   <Layout>

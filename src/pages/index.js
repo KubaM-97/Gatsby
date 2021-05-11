@@ -16,7 +16,7 @@ const IndexPage = () => (
 
     <h2>This is routing in 'pages' folder: </h2>
     <p style={{backgroundColor: `orange`, padding: '10px'}}>
-      <Link to="/posts/">Go to Blogs</Link> <br />
+      <Link to="/posts/">Go to Posts</Link> <br />
       <Link to="/using-typescript/">Go to TypeScript</Link> <br />
       <Link to="/styling/">Styling page</Link> <br />
       <Link to="/image/">Image page</Link> <br />

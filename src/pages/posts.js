@@ -14,6 +14,7 @@ const PostPage = () => {
                             path
                             title
                         }
+                        id
                     }
                 }
             }
